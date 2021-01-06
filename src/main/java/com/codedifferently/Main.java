@@ -22,6 +22,7 @@ public class Main {
         menu = new ArrayList<>();
         menu.add("Exit");
         menu.add("Add New Person");
+        menu.add("Create Mock Person");
     }
 
     public Integer displayMenu(){
