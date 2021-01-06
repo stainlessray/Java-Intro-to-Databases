@@ -21,13 +21,12 @@ public class Main {
     private void initMenuOption(){
         menu = new ArrayList<>();
         menu.add("Exit");
-        /**
-         * Add your menu items here
-         */
+        menu.add("Add New Person");
+
     }
 
     public Integer displayMenu(){
-        int option = 0;
+        int option;
         for(int i = 0; i < menu.size(); i++){
             String menuOption = String.format("Press %d for %s", i, menu.get(i));
             System.out.println(menuOption);
@@ -49,6 +48,12 @@ public class Main {
                     case 0:
                         System.out.println("Goodbye!!");
                         endProgram = true;
+                        break;
+                    case 1:
+                        System.out.println(menuOption + "selected");
+                        break;
+                    case 2:
+                        System.out.println(menuOption + "selected ");
                         break;
                     default:
                         break;

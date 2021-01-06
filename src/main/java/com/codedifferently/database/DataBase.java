@@ -10,8 +10,7 @@ public class DataBase {
 
     private void getConnection() throws DataBaseConnectionException {
         try{
-            Connection connection = DriverManager
-                    .getConnection("jdbc:mysql://localhost:3306/addressbook?createDatabaseIfNotExist=true&useSSL=false", "developer01", "pass");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3308/addressbook?createDatabaseIfNotExist=true&useSSL=false", "ray", "realPassword");
             connection.setAutoCommit(false);
             logger.info("Successful Connection");
         }catch (Exception e) {
