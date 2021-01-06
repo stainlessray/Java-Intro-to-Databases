@@ -13,8 +13,10 @@ public class Person {
         setLastName(lastName);
         setEmail(email);
         setAge(age);
+        System.out.printf("%n=============================%n%n");
+        System.out.printf("%nNew Contact Details: %nFirst Name: %s%nLast Name: %s%nEmail: %s%nAge: %s%n", firstName, lastName, email, age);
+        System.out.printf("%n%n----------------------------%n");
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -47,9 +49,4 @@ public class Person {
     public void setAge(Integer age) {
         this.age = age;
     }
-
-    //todo Constructor from UML
-    //
-
-
 }

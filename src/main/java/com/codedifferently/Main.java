@@ -22,7 +22,6 @@ public class Main {
         menu = new ArrayList<>();
         menu.add("Exit");
         menu.add("Add New Person");
-
     }
 
     public Integer displayMenu(){
@@ -39,9 +38,8 @@ public class Main {
         try {
             Main main = new Main();
             Boolean endProgram = false;
-            System.out.println("Welcome to address book");
+            System.out.println("Address Book");
             while (!endProgram) {
-                /* Your code goes here */
                 int menuOption = main.displayMenu();
 
                 switch(menuOption){
@@ -51,6 +49,7 @@ public class Main {
                         break;
                     case 1:
                         System.out.println(menuOption + "selected");
+                        CreatePerson.newPerson();
                         break;
                     case 2:
                         System.out.println(menuOption + "selected ");
