@@ -30,7 +30,7 @@ public class CreatePerson {
 
     public String getUserInputStr(String fieldStr) {
         System.out.printf("Enter %s: ", fieldStr);
-        Scanner scanner = new Scanner(System.in);
+        //Scanner scanner = new Scanner(System.in);
         return scanner.next();
     }
 
@@ -75,13 +75,13 @@ public class CreatePerson {
                     fieldInt = "age";
                     Integer newAge = entryMenu.getUserInputInt(fieldInt);
                     userInformation.append("Age: ").append(newAge).append("\n");
-                    System.out.println(" ** Preparing contact " + userInformation);
+                    System.out.println(" ** Preparing contact " + "\n" + userInformation);
                     Person person = new Person(newFirstName, newLastName, newEmail, newAge);
-
                     break;
                 case 5:
-
-
+                    field = "confirm (y/n)";
+                    System.out.println("Would you like to save this contact?");
+                    String confirm = entryMenu.getUserInputStr(field);
                 default:
                     break;
             }

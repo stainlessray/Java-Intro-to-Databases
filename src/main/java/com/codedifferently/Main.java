@@ -44,7 +44,7 @@ public class Main {
 
                 switch(menuOption){
                     case 0:
-                        System.out.println("Goodbye!!");
+                        System.out.println("exiting..");
                         endProgram = true;
                         break;
                     case 1:
