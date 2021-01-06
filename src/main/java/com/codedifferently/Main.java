@@ -10,6 +10,7 @@ public class Main {
 
     private DataBase dataBase;
     private static Scanner scanner;
+    AddressBook addressBook = new AddressBook();
 
     private ArrayList<String> menu;
     public Main() throws DataBaseConnectionException {
@@ -22,6 +23,7 @@ public class Main {
         menu = new ArrayList<>();
         menu.add("Exit");
         menu.add("Add New Person");
+        menu.add("View Address Book");
     }
 
     public Integer displayMenu(){
@@ -38,6 +40,7 @@ public class Main {
         try {
             Main main = new Main();
             Boolean endProgram = false;
+
             System.out.println("Address Book");
             while (!endProgram) {
                 int menuOption = main.displayMenu();
@@ -50,9 +53,13 @@ public class Main {
                     case 1:
                         System.out.println(menuOption + "selected");
                         CreatePerson.newPerson();
+                        // todo query to post new contact to database
                         break;
                     case 2:
                         System.out.println(menuOption + "selected ");
+                        // todo query database for all records
+                        // display all the records
+                        main.addressBook.getAllPeople();
                         break;
                     default:
                         break;
