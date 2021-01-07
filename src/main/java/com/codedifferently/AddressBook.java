@@ -8,7 +8,6 @@ public class AddressBook {
     private List<Person> people = new ArrayList<>();
 
     public AddressBook() {
-
     }
 
     public Person getOwner() {
@@ -19,9 +18,7 @@ public class AddressBook {
         this.owner = person;
     }
 
-    public void addPerson(Person person) {
-        this.people.add(person);
-
+    public void addPerson(Person person) { this.people.add(person);
     }
 
     public void removePerson(Person person) {

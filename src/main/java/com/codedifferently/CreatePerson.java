@@ -1,5 +1,8 @@
 package com.codedifferently;
 
+import com.codedifferently.database.DataBase;
+import com.codedifferently.database.DataBaseConnectionException;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,11 +13,7 @@ public class CreatePerson {
     private void initMenuOption(){
         menu = new ArrayList<>();
         menu.add("Exit");
-        menu.add("Input First Name");
-        menu.add("Input Last Name");
-        menu.add("Input Email Address");
-        menu.add("Input Age");
-        menu.add("Save");
+        menu.add("Create new person");
         scanner = new Scanner(System.in);
     }
 
@@ -39,52 +38,37 @@ public class CreatePerson {
         return scanner.nextInt();
     }
 
-    public static void newPerson() {
+    public Person createNewPerson() {
+        String firstName = getUserInputStr("firstName");
+        String lastName = getUserInputStr("lastName");
+        String email = getUserInputStr("email");
+        Integer age = getUserInputInt("age");
+        return new Person(firstName, lastName, email, age);
+    }
+
+    public static Person newPerson() throws DataBaseConnectionException {
         CreatePerson entryMenu = new CreatePerson();
+        Person person = null;
         entryMenu.initMenuOption();
         boolean endProgram = false;
-        System.out.println("Create New Entry");
-        StringBuilder userInformation = new StringBuilder();
-        String newFirstName = "";
-        String newLastName = "";
-        String newEmail = "";
         while (!endProgram) {
             String field;
             String fieldInt;
             int menuOption = entryMenu.displayMenu();
 
-            switch(menuOption){
-
+            switch (menuOption) {
                 case 0:
-                    System.out.println(menuOption +" going back to main menu..");
+                    System.out.println(menuOption + " going back to main menu..");
                     endProgram = true;
                     break;
+
                 case 1:
-                    field = "firstName";
-                    newFirstName = entryMenu.getUserInputStr(field);
-                    userInformation.append("First Name: ").append(newFirstName).append("\n");
-                case 2:
-                    field = "lastName";
-                    newLastName = entryMenu.getUserInputStr(field);
-                    userInformation.append("Last Name: ").append(newLastName).append("\n");
-                case 3:
-                    field = "email";
-                    newEmail = entryMenu.getUserInputStr(field);
-                    userInformation.append("Email: ").append(newEmail).append("\n");
-                case 4:
-                    fieldInt = "age";
-                    Integer newAge = entryMenu.getUserInputInt(fieldInt);
-                    userInformation.append("Age: ").append(newAge).append("\n");
-                    System.out.println(" ** Preparing contact " + userInformation);
-                    Person person = new Person(newFirstName, newLastName, newEmail, newAge);
-
+                    person = entryMenu.createNewPerson();
                     break;
-                case 5:
-
-
                 default:
                     break;
             }
         }
+        return person;
     }
 }

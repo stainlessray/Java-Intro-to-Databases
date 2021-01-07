@@ -52,8 +52,9 @@ public class Main {
                         break;
                     case 1:
                         System.out.println(menuOption + "selected");
-                        CreatePerson.newPerson();
-                        // todo query to post new contact to database
+                        Person person = CreatePerson.newPerson();
+                        System.out.println(person.getFirstName());
+                        main.dataBase.insertNewPerson(person);
                         break;
                     case 2:
                         System.out.println(menuOption + "selected ");

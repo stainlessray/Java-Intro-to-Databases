@@ -15,7 +15,6 @@ public class TestAddressBook {
         System.out.println(actual);
     }
 
-
     @Test
     public void testGetAllPeople() {
         AddressBook addressBook = new AddressBook();
@@ -26,6 +25,4 @@ public class TestAddressBook {
         int actual = people.size();
         Assert.assertEquals(expected, actual);
     }
-
-
 }

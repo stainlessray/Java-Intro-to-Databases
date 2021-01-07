@@ -5,10 +5,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestPerson {
-    Person person = new Person("Bill", "Murray", "billsemail@hisdomain.com", 70);
+    Person person;
 
     @Before
     public void setUp() {
+        person = new Person("Bill", "Murray", "billsemail@hisdomain.com", 70);
     }
 
     @Test

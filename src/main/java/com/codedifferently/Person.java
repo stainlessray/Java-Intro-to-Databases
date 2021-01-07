@@ -1,21 +1,44 @@
 package com.codedifferently;
 
+import java.util.UUID;
+
 public class Person {
 
     private String firstName;
     private String lastName;
     private String email;
     private Integer age;
+    private String id;
 
-
+    /**
+     * Use this method to create a new person object
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param age
+     */
     public Person(String firstName, String lastName, String email, Integer age) {
-        setFirstName(firstName);
-        setLastName(lastName);
-        setEmail(email);
-        setAge(age);
-        System.out.printf("%n%n================================%nNew Contact Details%n--------------------------------%n");
-        System.out.printf("Name: %s %s%nEmail: %s%nAge: %s%n", firstName, lastName, email, age);
-        //System.out.printf("----------------------------%n%n");
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        id = UUID.randomUUID().toString();
+    }
+
+    /**
+     * use this method when getting a Person from the database
+     * @param id
+     * @param firstName
+     * @param lastName
+     * @param email
+     * @param age
+     */
+    public Person(String id, String firstName, String lastName, String email, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.age = age;
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -48,5 +71,13 @@ public class Person {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
